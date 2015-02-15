@@ -18,7 +18,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 .litemodal.loading .m-body{
-    background-image:url(//www.xiconeditor.com/image/icons/loading.gif);
+    background-image:url(http://www.xiconeditor.com/image/icons/loading.gif);
     background-repeat:no-repeat;
     background-position:right bottom;
 }
