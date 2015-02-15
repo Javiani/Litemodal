@@ -1,0 +1,58 @@
+html, body{
+    padding:40px 100px;
+    font-family:Trebuchet Ms;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color:orange;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/**
+* States
+**/
+
+.litemodal.open{
+    display:block;
+}
+
+.litemodal.loading .m-body{
+    background-image:url(//www.xiconeditor.com/image/icons/loading.gif);
+    background-repeat:no-repeat;
+    background-position:right bottom;
+}
+
+/**
+* Customizing Litemodal body
+**/
+
+/*Overlay*/
+.litemodal:before{
+    background-color:gray;
+}
+
+/*Modal document*/
+.litemodal .m-body{
+
+    padding:0 10px 10px;
+    background:#fff;
+
+    -webkit-border-radius:  5px;
+     -moz-border-radius:    5px;
+      -ms-border-radius:    5px;
+          border-radius:    5px;
+}
+
+.close{
+    display:block;
+    font:normal 0 arial;
+    float:right;
+    margin-top:5px;
+}
+
+.close:after{
+    content:"✖";
+    font-size:40px;
+    color:red;
+}

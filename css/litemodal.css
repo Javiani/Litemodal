@@ -1,0 +1,40 @@
+.litemodal{
+    position:fixed;
+    text-align:center;
+    display:none;
+}
+
+.litemodal, .litemodal:before{
+    width:100%;
+    height:100%;
+    left:0;
+    top:0;
+}
+
+.litemodal .m-body, .litemodal:after{
+    position:relative;
+    z-index:2;
+    display:inline-block;
+    vertical-align:middle;
+}
+
+.litemodal:before, .litemodal:after{
+    content:"";
+}
+
+.litemodal:before{
+    position:absolute;
+    background:#000;
+    opacity:.8;
+}
+
+.litemodal .m-body{
+    width:40%;
+    height:50%;
+    text-align:left;
+    overflow-y:auto;
+}
+
+.litemodal:after{
+    height:100%;
+}

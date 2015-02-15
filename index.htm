@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-BR">
+    <head>
+
+        <title>Litemodal - As simple as it gets</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <link rel="stylesheet" href="css/litemodal.min.css" />
+        <link rel="stylesheet" href="css/app.css" />
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <script type="text/javascript">
+
+            var modal, body;
+
+            $(function(){
+
+                modal = $('.litemodal');
+                body  = $('body');
+
+                body.on('click', 'a[rel=modal]', open);
+                body.on('click', 'a[rel=modal-close]', close);
+                body.on('click', '.litemodal', outsideclose);
+                body.on('click', '.loading-state', loading);
+            });
+
+            function open(e){
+                modal.addClass('open').removeClass('loading');
+                e.preventDefault();
+            }
+
+            function close(e){
+                modal.removeClass('open');
+                e.preventDefault();
+            }
+
+            function outsideclose(e){
+                if( $(e.target).is('.litemodal') ){
+                    close(e);
+                }
+            }
+
+            function loading(e){
+                var method = $(this).data('type') + 'Class';
+                modal[method]('loading');
+                e.preventDefault();
+            }
+
+        </script>
+    </head>
+
+    <body>
+
+        <h2>Click on any link in the document to open modal</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt fringilla justo vitae aliquet. Vivamus sit amet accumsan nulla. Morbi molestie ac ligula et faucibus. Donec tincidunt enim eu urna malesuada iaculis. Integer diam dui, pharetra vel turpis sed, varius iaculis felis. Phasellus consequat auctor sem, ac aliquet lectus dignissim vel. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus pellentesque, justo a condimentum congue, velit tellus posuere ante, ac ultrices eros eros venenatis risus. Vivamus varius odio volutpat, tincidunt massa quis, viverra sapien. Mauris maximus dapibus elit, vel ultricies odio porta ac. In sit amet ex ligula.</p>
+        <p>Quisque aliquet enim quis felis congue aliquet. Pellentesque sit amet libero sed risus mattis tempus. Fusce id nibh nisl. Quisque sodales, ante nec malesuada volutpat, lectus leo pretium tortor, nec mattis nunc felis et diam. Curabitur dictum tortor id rutrum dictum. Fusce eget diam ligula. Nulla ut aliquet urna. Pellentesque non risus fringilla, volutpat massa et, sodales orci. Quisque dignissim neque libero, non consectetur magna tincidunt eu. Phasellus tempor nulla in augue tincidunt, at ultrices sapien vulputate.</p>
+        <p>Cras sagittis efficitur interdum. Proin pellentesque mi ipsum. Vestibulum fermentum purus ac libero porttitor lobortis. Duis vehicula nisl porttitor est vestibulum porttitor. Integer feugiat tellus magna, ut tincidunt diam tristique ut. Quisque id tellus hendrerit, dapibus purus sit amet, venenatis ex. Nullam quis porttitor leo. Integer pulvinar convallis ligula eu ultrices. Donec sed tristique velit, vel luctus est.</p>
+        <p>Morbi vitae dolor suscipit, rhoncus erat id, vehicula mi. Ut fermentum ullamcorper nisi ac euismod. Maecenas non luctus ex. Nunc nec massa ipsum. Aliquam quis pretium velit. Proin nec nunc et neque cursus ultricies. Curabitur ac ligula dapibus, ultricies massa et, mattis ex. Sed sit amet ultrices nisl, vitae convallis urna. In convallis tempor diam.</p>
+        <p>Nullam molestie ipsum sed tempus sodales. Praesent cursus malesuada diam, vitae facilisis tellus tempor condimentum. Donec quis leo vitae massa suscipit convallis interdum at sapien. Cras euismod rhoncus placerat. Morbi purus lectus, tristique non volutpat eu, feugiat sed magna. Aliquam in est erat. Proin gravida erat vitae dolor convallis hendrerit. Curabitur eu pharetra nisi. In lacinia porttitor massa, sed hendrerit neque tincidunt vel.</p>
+        <p>Aenean cursus <a href="some/url/to/open" rel="modal">Open Modal</a> pulvinar. Donec sed sodales sem. Donec lectus felis, lobortis ac tempor et, interdum nec massa. Vestibulum sem ligula, gravida non tortor at, fringilla pellentesque libero. Proin lobortis non risus id ultrices. Nunc venenatis tristique nisi a faucibus. Morbi pellentesque, arcu congue elementum commodo, ipsum libero rutrum elit, ultricies consequat nibh mauris aliquet quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce massa erat, tempus vitae ex sit amet, tristique efficitur dui. Mauris eget vulputate dolor, quis hendrerit ante. Aenean tempor nibh in lobortis mattis. Quisque nec augue in elit facilisis tincidunt a et urna. Nullam tempus, lacus a mattis euismod, lacus nunc sollicitudin risus, eu auctor arcu dui ac mi. Vestibulum tristique libero at neque fringilla, sed rhoncus nisi interdum. Morbi mi nulla, sagittis eget ipsum at, feugiat maximus justo. Mauris mi velit, venenatis in mi ut, pharetra tempor felis.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt fringilla justo vitae aliquet. Vivamus sit amet accumsan nulla. Morbi molestie ac ligula et faucibus. Donec tincidunt enim eu urna malesuada iaculis. Integer diam dui, pharetra vel turpis sed, varius iaculis felis. Phasellus consequat auctor sem, ac aliquet lectus dignissim vel. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus pellentesque, justo a condimentum congue, velit tellus posuere ante, ac ultrices eros eros venenatis risus. Vivamus varius odio volutpat, tincidunt massa quis, viverra sapien. Mauris maximus dapibus elit, vel ultricies odio porta ac. In sit amet ex ligula.</p>
+        <p>Quisque aliquet enim quis felis congue aliquet. Pellentesque sit amet libero sed risus mattis tempus. Fusce id nibh nisl. Quisque sodales, ante nec malesuada volutpat, lectus leo pretium tortor, nec mattis nunc felis et diam. Curabitur dictum tortor id rutrum dictum. Fusce eget diam ligula. Nulla ut aliquet urna. Pellentesque non risus fringilla, volutpat massa et, sodales orci. Quisque dignissim neque libero, non consectetur magna tincidunt eu. Phasellus tempor nulla in augue tincidunt, at ultrices sapien vulputate.</p>
+        <p>Cras sagittis efficitur interdum. Proin pellentesque mi ipsum. Vestibulum fermentum purus ac libero porttitor lobortis. Duis vehicula nisl porttitor est vestibulum porttitor. Integer feugiat tellus magna, ut tincidunt diam tristique ut. Quisque id tellus hendrerit, dapibus purus sit amet, venenatis ex. Nullam quis porttitor leo. Integer pulvinar convallis ligula eu ultrices. Donec sed tristique velit, vel luctus est.</p>
+        <p>Morbi vitae dolor suscipit, rhoncus erat id, vehicula mi. Ut fermentum ullamcorper nisi ac euismod. Maecenas non luctus ex. Nunc nec massa ipsum. Aliquam quis pretium velit. Proin nec nunc et neque cursus ultricies. Curabitur ac ligula dapibus, ultricies massa et, mattis ex. Sed sit amet ultrices nisl, vitae convallis urna. In convallis tempor diam.</p>
+        <p>Nullam molestie ipsum sed tempus sodales. Praesent cursus malesuada diam, vitae facilisis tellus tempor condimentum. Donec quis leo vitae massa suscipit convallis interdum at sapien. Cras euismod rhoncus placerat. Morbi purus lectus, tristique non volutpat eu, feugiat sed magna. Aliquam in est erat. Proin gravida erat vitae dolor convallis hendrerit. Curabitur eu pharetra nisi. In lacinia porttitor massa, sed hendrerit neque tincidunt vel.</p>
+        <p>Aenean cursus <a href="some/url/to/open" rel="modal">Open Modal</a> pulvinar. Donec sed sodales sem. Donec lectus felis, lobortis ac tempor et, interdum nec massa. Vestibulum sem ligula, gravida non tortor at, fringilla pellentesque libero. Proin lobortis non risus id ultrices. Nunc venenatis tristique nisi a faucibus. Morbi pellentesque, arcu congue elementum commodo, ipsum libero rutrum elit, ultricies consequat nibh mauris aliquet quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce massa erat, tempus vitae ex sit amet, tristique efficitur dui. Mauris eget vulputate dolor, quis hendrerit ante. Aenean tempor nibh in lobortis mattis. Quisque nec augue in elit facilisis tincidunt a et urna. Nullam tempus, lacus a mattis euismod, lacus nunc sollicitudin risus, eu auctor arcu dui ac mi. Vestibulum tristique libero at neque fringilla, sed rhoncus nisi interdum. Morbi mi nulla, sagittis eget ipsum at, feugiat maximus justo. Mauris mi velit, venenatis in mi ut, pharetra tempor felis.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt fringilla justo vitae aliquet. Vivamus sit amet accumsan nulla. Morbi molestie ac ligula et faucibus. Donec tincidunt enim eu urna malesuada iaculis. Integer diam dui, pharetra vel turpis sed, varius iaculis felis. Phasellus consequat auctor sem, ac aliquet lectus dignissim vel. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus pellentesque, justo a condimentum congue, velit tellus posuere ante, ac ultrices eros eros venenatis risus. Vivamus varius odio volutpat, tincidunt massa quis, viverra sapien. Mauris maximus dapibus elit, vel ultricies odio porta ac. In sit amet ex ligula.</p>
+        <p>Quisque aliquet enim quis felis congue aliquet. Pellentesque sit amet libero sed risus mattis tempus. Fusce id nibh nisl. Quisque sodales, ante nec malesuada volutpat, lectus leo pretium tortor, nec mattis nunc felis et diam. Curabitur dictum tortor id rutrum dictum. Fusce eget diam ligula. Nulla ut aliquet urna. Pellentesque non risus fringilla, volutpat massa et, sodales orci. Quisque dignissim neque libero, non consectetur magna tincidunt eu. Phasellus tempor nulla in augue tincidunt, at ultrices sapien vulputate.</p>
+        <p>Cras sagittis efficitur interdum. Proin pellentesque mi ipsum. Vestibulum fermentum purus ac libero porttitor lobortis. Duis vehicula nisl porttitor est vestibulum porttitor. Integer feugiat tellus magna, ut tincidunt diam tristique ut. Quisque id tellus hendrerit, dapibus purus sit amet, venenatis ex. Nullam quis porttitor leo. Integer pulvinar convallis ligula eu ultrices. Donec sed tristique velit, vel luctus est.</p>
+        <p>Morbi vitae dolor suscipit, rhoncus erat id, vehicula mi. Ut fermentum ullamcorper nisi ac euismod. Maecenas non luctus ex. Nunc nec massa ipsum. Aliquam quis pretium velit. Proin nec nunc et neque cursus ultricies. Curabitur ac ligula dapibus, ultricies massa et, mattis ex. Sed sit amet ultrices nisl, vitae convallis urna. In convallis tempor diam.</p>
+        <p>Nullam molestie ipsum sed tempus sodales. Praesent cursus malesuada diam, vitae facilisis tellus tempor condimentum. Donec quis leo vitae massa suscipit convallis interdum at sapien. Cras euismod rhoncus placerat. Morbi purus lectus, tristique non volutpat eu, feugiat sed magna. Aliquam in est erat. Proin gravida erat vitae dolor convallis hendrerit. Curabitur eu pharetra nisi. In lacinia porttitor massa, sed hendrerit neque tincidunt vel.</p>
+        <p>Aenean cursus <a href="some/url/to/open" rel="modal">Open Modal</a> pulvinar. Donec sed sodales sem. Donec lectus felis, lobortis ac tempor et, interdum nec massa. Vestibulum sem ligula, gravida non tortor at, fringilla pellentesque libero. Proin lobortis non risus id ultrices. Nunc venenatis tristique nisi a faucibus. Morbi pellentesque, arcu congue elementum commodo, ipsum libero rutrum elit, ultricies consequat nibh mauris aliquet quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce massa erat, tempus vitae ex sit amet, tristique efficitur dui. Mauris eget vulputate dolor, quis hendrerit ante. Aenean tempor nibh in lobortis mattis. Quisque nec augue in elit facilisis tincidunt a et urna. Nullam tempus, lacus a mattis euismod, lacus nunc sollicitudin risus, eu auctor arcu dui ac mi. Vestibulum tristique libero at neque fringilla, sed rhoncus nisi interdum. Morbi mi nulla, sagittis eget ipsum at, feugiat maximus justo. Mauris mi velit, venenatis in mi ut, pharetra tempor felis.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam tincidunt fringilla justo vitae aliquet. Vivamus sit amet accumsan nulla. Morbi molestie ac ligula et faucibus. Donec tincidunt enim eu urna malesuada iaculis. Integer diam dui, pharetra vel turpis sed, varius iaculis felis. Phasellus consequat auctor sem, ac aliquet lectus dignissim vel. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus pellentesque, justo a condimentum congue, velit tellus posuere ante, ac ultrices eros eros venenatis risus. Vivamus varius odio volutpat, tincidunt massa quis, viverra sapien. Mauris maximus dapibus elit, vel ultricies odio porta ac. In sit amet ex ligula.</p>
+        <p>Quisque aliquet enim quis felis congue aliquet. Pellentesque sit amet libero sed risus mattis tempus. Fusce id nibh nisl. Quisque sodales, ante nec malesuada volutpat, lectus leo pretium tortor, nec mattis nunc felis et diam. Curabitur dictum tortor id rutrum dictum. Fusce eget diam ligula. Nulla ut aliquet urna. Pellentesque non risus fringilla, volutpat massa et, sodales orci. Quisque dignissim neque libero, non consectetur magna tincidunt eu. Phasellus tempor nulla in augue tincidunt, at ultrices sapien vulputate.</p>
+        <p>Cras sagittis efficitur interdum. Proin pellentesque mi ipsum. Vestibulum fermentum purus ac libero porttitor lobortis. Duis vehicula nisl porttitor est vestibulum porttitor. Integer feugiat tellus magna, ut tincidunt diam tristique ut. Quisque id tellus hendrerit, dapibus purus sit amet, venenatis ex. Nullam quis porttitor leo. Integer pulvinar convallis ligula eu ultrices. Donec sed tristique velit, vel luctus est.</p>
+        <p>Morbi vitae dolor suscipit, rhoncus erat id, vehicula mi. Ut fermentum ullamcorper nisi ac euismod. Maecenas non luctus ex. Nunc nec massa ipsum. Aliquam quis pretium velit. Proin nec nunc et neque cursus ultricies. Curabitur ac ligula dapibus, ultricies massa et, mattis ex. Sed sit amet ultrices nisl, vitae convallis urna. In convallis tempor diam.</p>
+        <p>Nullam molestie ipsum sed tempus sodales. Praesent cursus malesuada diam, vitae facilisis tellus tempor condimentum. Donec quis leo vitae massa suscipit convallis interdum at sapien. Cras euismod rhoncus placerat. Morbi purus lectus, tristique non volutpat eu, feugiat sed magna. Aliquam in est erat. Proin gravida erat vitae dolor convallis hendrerit. Curabitur eu pharetra nisi. In lacinia porttitor massa, sed hendrerit neque tincidunt vel.</p>
+        <p>Aenean cursus <a href="some/url/to/open" rel="modal">Open Modal</a> pulvinar. Donec sed sodales sem. Donec lectus felis, lobortis ac tempor et, interdum nec massa. Vestibulum sem ligula, gravida non tortor at, fringilla pellentesque libero. Proin lobortis non risus id ultrices. Nunc venenatis tristique nisi a faucibus. Morbi pellentesque, arcu congue elementum commodo, ipsum libero rutrum elit, ultricies consequat nibh mauris aliquet quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Fusce massa erat, tempus vitae ex sit amet, tristique efficitur dui. Mauris eget vulputate dolor, quis hendrerit ante. Aenean tempor nibh in lobortis mattis. Quisque nec augue in elit facilisis tincidunt a et urna. Nullam tempus, lacus a mattis euismod, lacus nunc sollicitudin risus, eu auctor arcu dui ac mi. Vestibulum tristique libero at neque fringilla, sed rhoncus nisi interdum. Morbi mi nulla, sagittis eget ipsum at, feugiat maximus justo. Mauris mi velit, venenatis in mi ut, pharetra tempor felis.</p>
+
+        <div class="litemodal">
+            <div class="m-body">
+                <a href="#/modal-close" rel="modal-close" class="close">Close</a>
+                <h2>Yeeey! =)</h2>
+                <p>Loading on: <a href="#/modal-loading" class="loading-state" data-type="add">ON</a></p>
+                <p>Loading off: <a href="#/modal-loading" class="loading-state" data-type="remove">OFF</a></p>
+            </div>
+        </div>
+
+    </body>
+
+</html>
