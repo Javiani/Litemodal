@@ -38,7 +38,7 @@ It's the content of modal, is the centered area of dialog window, it has width s
 
 ###↳ Live Example
 
-Here's just an example of a simple dialog using some Javascript to do the open, loading and closing events. [live demo]().
+Here's just an example of a simple dialog using some Javascript to do the open, loading and closing events. [live demo](https://rawgit.com/Javiani/Litemodal/master/index.htm).
 
 #### Example HTML
 ```html
