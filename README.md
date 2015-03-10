@@ -1,7 +1,7 @@
 
 #★ Lite Modal ★
 
-###✌ A very light-weight, simple to use, state driven dialog Css library ✌
+###✌ A very light-weight, simple to use, state driven dialog Css ✌
 
 
 ##↳ Motivation
@@ -14,7 +14,7 @@ You can use it just like it is, or adding new features that suits best for you.
 
 ##↳ Strategy
 
-Lite Modal rely on `display:inline-block` technic to do the centered positioning of dialog content. It's fluid and works without any calculations, so browser can update positioning on it's own, so it's FAST.
+Lite Modal relies on `display:inline-block` technic to do the centered positioning of dialog content. It's fluid and works without any calculations, so browser can update positioning on it's own, so it's FAST.
 
 The properties and states of modal should be done by adding to `div.litemodal` new classes such as `loading`, `minimized`, `maximized` and so on. This means that Javascript should be used only to add/remove classes to change modal's presentation.
 
