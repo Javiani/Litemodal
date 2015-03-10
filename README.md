@@ -1,7 +1,7 @@
 
 #★ Lite Modal ★
 
-###✌ A very light-weight, simple to use, state driven dialog Css ✌
+###✌ A very light-weight, simple to use, state driven dialog ✌
 
 
 ##↳ Motivation
