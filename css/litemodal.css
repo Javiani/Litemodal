@@ -2,6 +2,7 @@
     position:fixed;
     text-align:center;
     display:none;
+    z-index:9;
 }
 
 .litemodal, .litemodal:before{
