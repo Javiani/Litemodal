@@ -56,18 +56,19 @@ Here's just an example of a simple dialog using some Javascript to do the open, 
 	display:block;
 }
 
+/* Model Body */
 .litemodal.loading .m-body{
 	background-image:url(//www.xiconeditor.com/image/icons/loading.gif);
 	background-repeat:no-repeat;
 	background-position:right bottom;
 }
 
-/*Overlay*/
+/* Overlay */
 .litemodal:before{
 	background-color:gray;
 }
 
-/*Modal document*/
+/* Modal document */
 .litemodal .m-body{
 	padding:0 10px 10px;
 	background:#fff;
